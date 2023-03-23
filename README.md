@@ -1,5 +1,5 @@
 # 공부 기록 
-공부한 내용들 기록하기 위해 만든 repo입니다. 
+공부한 내용들 기록하기 위해 만든 repository입니다. 
 <br>
 
 
@@ -13,3 +13,4 @@
 ## 세부 기록
 
 ### 23.03.23
+'Attention Is All You Need' 논문의 introduction, background 
