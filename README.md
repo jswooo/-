@@ -12,5 +12,8 @@
 
 ## 세부 기록
 
-### 23.03.23
+#### 23.03.23
 'Attention Is All You Need' 논문의 introduction, background 
+
+#### 23.03.24
+'Attention Is All You Need' 논문의 model architecture
