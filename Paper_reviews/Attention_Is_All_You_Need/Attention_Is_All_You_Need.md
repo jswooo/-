@@ -61,7 +61,7 @@ dot-product attention에서는 query와 key의 차원이 커질수록 softmax �
 concat하여 가중치 행렬을 내적한 후, 하나의 input으로서 feed forward layer를 통과한다.<br> 
 <br>
 
-#### applications of attention in this paper 
+#### Applications of attention in this paper 
 이번 논문에서는 총 3가지 형태의 어텐션이 활용된다.
 > Encoder-decoder attention <br>
 > <br>
