@@ -162,7 +162,7 @@ Positional encoding은 sin과 cos 함수를 통해서 구성했으며, 기존에
 <br>
 <br>
 
-## 몰랐던 용어 정리.. 
+## 몰랐던 용어 정리
 - [Byte-pair encoding](https://wikidocs.net/22592): 기존에 있는 단어들을 통해서 모르든 단어를 해결하는 알고리즘. 
 - [Label smoothing](https://blog.si-analytics.ai/21#footnote_21_2): 결과 값에 대해서 0에서 1 사이의 확률 값으로 soft label하는 방법이다. 정답이 아닌 선지들에 대해 일정량의 확률을 분배하고, 최대 확률이 다른 확률들에 비해서 지나치게 커지는 것을 방지한다. 또한 딥러닝 모델이 정답에 대해서 과하게 확신하는 현상을 줄여서 신뢰성을 올린다. 
 - [Beam search](https://littlefoxdiary.tistory.com/4): 각각의 step에서 확률이 높은 k개의 토큰들을 유지하며 시퀀스 번역을 진행하는 방법이다. k를 높게 잡을 경우에는 속도에 문제가 생긴다. 
