@@ -17,3 +17,6 @@
 
 #### 23.03.24
 'Attention Is All You Need' 논문의 model architecture
+
+#### 23.03.26 
+'Attention Is All You Need' 논문 나머지 다 읽고, 정리
