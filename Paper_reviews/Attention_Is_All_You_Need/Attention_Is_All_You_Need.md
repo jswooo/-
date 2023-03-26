@@ -146,6 +146,8 @@ Positional encoding은 sin과 cos 함수를 통해서 구성했으며, 기존에
 ### 6.2 모델의 변수 중요도 
 <img width="735" alt="image" src="https://user-images.githubusercontent.com/102455634/227770446-13b31fc3-45f2-4991-a39d-cdfc06465425.png">
 <br>
+
+
 각 변수의 중요도를 알아보기 위해서 base model에서 변수를 변화시키며 실험을 진행했을때, 다음과 같은 정보를 알 수 있다. 
 - Attention head를 늘릴 경우에 성능이 향상되나, 너무 많이 늘리면 다시 성능 하락을 보인다. ((A)를 통해서 확인)
 - Attention size key를 줄이면 모델 성능이 떨어진다. ((B)를 통해서 확인) 
