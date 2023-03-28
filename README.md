@@ -22,4 +22,7 @@
 'Attention Is All You Need' 논문 나머지 다 읽고, 정리
 
 #### 23.03.27
-'BERT'논문
+'BERT'논문의 introduction, related work 
+
+#### 23.03.28
+'BERT'논문의 BERT 구조 
