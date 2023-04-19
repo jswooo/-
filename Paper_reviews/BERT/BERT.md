@@ -37,9 +37,48 @@ BERT의 입력은 문장 하나 또는 두 개로 구성된다. 따라서 이들
 주어진 입력 문장과 special token을 포함한 임베딩 값은 token, segment, position embedding의 합으로 구성된다. <br>
 우선, 입력에 대해서 wordpiece 토큰화를 진행하여 임베딩 값을 얻는다. 그리고 토큰의 소속 문장을 나타내는 segement embedding과 시퀀스에서의 상대적 위치를 나타내는 position embedding을 더하여 최종 임베딩 값을 산출한다. 이때 각 임베딩 값의 차원은 동일하기에, 임베딩 간에 덧셈을 진행할 수 있다. <br><br>
 CLS에 해당하는 토큰의 최종 hidden state 값은 분류 task의 결과값으로 사용된다. 따라서 pre-train 과정 중 NSP에 대한 출력 여부도 해당 토큰의 최종 hidden state 값을 통해서 확인한다. 
+<br>
+<br>
+
+### 2.1 Pre-training BERT
+BERT에서는 기존 left-to-right나 right-to-left 언어 모델을 사용하지 않고, 2개의 비지도 task를 통해 학습을 진행한다. 
+
+#### #1. Masked Language Model(MLM)
+BERT는 input 시퀀스의 토큰 중 15%를 마스킹하고, 마스킹된 토큰을 예측하는 MLM을 통해서 깊은 양방향 representation을 학습한다.<br>
+단, MLM은 pre-training에서만 실행하고 fine-tuning에 있어서는 실행하지 않기에 mismatch가 발생할 수 있다. 따라서 pre-training 과정에서 마스킹 된 15%의 토큰은 각각 다음과 같이 변경해서 mismatch로 인한 문제점을 줄여준다. 
+- [MASK] 토큰으로 대체(80%) 
+- 랜덤 토큰으로 대체(10%)
+- 바꾸지 않고 그대로 둠(10%) 
 
 
-## 2.1 Pre-training BERT
+위와 같이 실행할 경우, 인코더가 어떤 단어를 예측해야 하는지 알 수 없고 어떤 단어가 랜덤으로 대체되었는지 알 수 없다. 따라서 모든 단어들에 대한 문맥적 representation을 확인해야 하기에, 성능면에서 이점을 얻을 수 있다. 또한, 랜덤으로 대체되는 것은 전체 토큰의 1.5%(마스킹 되는 토큰 15% 중 10%만 랜덤으로 대체)이다. 그렇기에 모델의 학습에 있어서도 크게 문제되지 않는다. 
+<br> 
+<br>
+MLM의 효과는 BERT 논문에서 실행한 Ablation study를 통해서 알아볼 수 있다. <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/102455634/233071660-90572448-abd4-4de0-b64c-9996712f5150.png">
+<br>
+토큰을 마스킹하기 때문에 left-to-right에 비해서 정확도 수렴은 늦지만, 같은 BERT base에 대해서 비교 실험을 진행해도 MLM 사용 모델의 정확도가 훨씬 높은 것을 확인할 수 있다. 
+<br>
+<br>
+<img width="380" alt="image" src="https://user-images.githubusercontent.com/102455634/233074035-aafff2af-ca78-4a61-ba2b-335ec141238e.png">
+<br>
+앞서 언급한 마스킹 비율 또한 마스킹 비율에 대한 ablation study를 통해 확인 가능하다. 80%, 20%, 20%로 진행시 정확도가 가장 높은 것을 볼 수 있다. 
+<br>
 
+
+#### #2. Next Sentence Prediction(NSP)
+Question Answering(QA)이나 자연어 추론(NLI) 같은 경우에는 문장 간의 이해가 중요하다. 따라서 BERT는 문장 간의 관계를 학습하기 위해서 NSP를 사용한다. <br>
+<br>
+pre-training에 대해서 2가지의 문장이 input으로 주어진다. 이 중 50%는 실제로 연결되는 문장이며(IsNext), 나머지 50%는 랜덤으로 선택된 문장(NotNext)이 주어진다. 다음과 같은 과정을 통해 문장 사이의 관계를 학습할 수 있으며, 실제로 QA와 NLI task에 대해서 효과적이다. <br>
+<br>
+<img width="380" alt="image" src="https://user-images.githubusercontent.com/102455634/233079908-5c5e630c-2917-49ee-9947-e642e6577325.png">
+<br>
+<br>
+다음은 pre-training task의 효과를 확인하기 위한 ablation study이며, 결과를 통해 'Masked Language Model'과 'Next Sentence Prediction'이 효과적임을 확인할 수 있다. 
+<br>
+<br>
+#### #3. Pre-training data 
+Pre-training을 위해서 BooksCorpus(800M words)와 English Wikipedia(2500M words)를 사용했다. <br>
+또한 긴 길이의 연속된 시퀀스를 input으로 사용하기 위해서, document level의 corpus를 활용했다. <br>
 
 
