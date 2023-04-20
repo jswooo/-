@@ -80,5 +80,21 @@ pre-training에 대해서 2가지의 문장이 input으로 주어진다. 이 중
 #### #3. Pre-training data 
 Pre-training을 위해서 BooksCorpus(800M words)와 English Wikipedia(2500M words)를 사용했다. <br>
 또한 긴 길이의 연속된 시퀀스를 input으로 사용하기 위해서, document level의 corpus를 활용했다. <br>
+<br>
+
+### 2.2 Fine-tuning BERT
+BERT는 트랜스포머의 self-attention을 활용해서 downstream task에 대한 fine-tuning도 쉽게 진행할 수 있다. <br>
+task마다 각각 다른 input을 받아서 진행하는데, input은 다음과 같다.
+- sentence pairs in paraphrasing 
+- hypothesis premise pairs in entailment
+- question passage in QA
+- Degenerate-None pair in text classification or sequence tagging
+<br>
+또한 task에 따라서 output도 달라지게 되는데, 1. sequence tagging이나 QA 같은 token level task에 대하선 token representation 2. 분류 문제에 대해선 [CLS] representation이다.<br>
+이러한 fine-tuning 과정은 사전 학습에 비해서 시간이 적게 드는데, TPU를 사용한다면 1시간에 끝나기도 한다.
+<br>
+<br>
+
+
 
 
