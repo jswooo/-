@@ -11,6 +11,7 @@
 - `23.03.23 ~ 23.03.26` : ['Attention Is All You Need' 논문 리딩 및 정리](https://github.com/jswooo/What_I_learned/blob/main/Paper_reviews/Attention_Is_All_You_Need/Attention_Is_All_You_Need.md) 
 - `23.03.27 ~ 23.04.19` : ['BERT' 논문 리딩 및 정리](https://github.com/jswooo/What_I_learned/blob/main/Paper_reviews/BERT/BERT.md) 
 - `23.03.31 ~ ` : 삼성증권 디지털/IT학회 연계 프로그램  
+- `23.04.26 ~ ` : hugging face 
 
 ## 세부 기록
 
@@ -49,3 +50,6 @@
 
 #### 23.04.20 ~ 23.04.24
 중간고사 시험공부 
+
+#### 23.04.26 ~ 
+hugging face
