@@ -52,4 +52,4 @@
 중간고사 시험공부 
 
 #### 23.04.26 ~ 
-hugging face
+hugging face chapter 1
