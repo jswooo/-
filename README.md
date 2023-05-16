@@ -12,6 +12,7 @@
 - `23.03.27 ~ 23.04.19` : ['BERT' 논문 리딩 및 정리](https://github.com/jswooo/What_I_learned/blob/main/Paper_reviews/BERT/BERT.md) 
 - `23.03.31 ~ ` : 삼성증권 디지털/IT학회 연계 프로그램  
 - `23.04.26 ~ ` : [Hugging face](https://huggingface.co/learn/nlp-course/chapter1/1)
+- `23.05.13 ~ ` : BITAmin 컨퍼런스 프로젝트 
 
 ## 세부 기록
 
@@ -53,3 +54,6 @@
 
 #### 23.04.26 ~ 
 hugging face chapter 1
+
+#### 23.05.16 ~
+hugging face chapter 2 
