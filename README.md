@@ -57,3 +57,6 @@ hugging face chapter 1
 
 #### 23.05.16 ~
 hugging face chapter 2 
+
+#### 23.06.05 ~
+hugging face chapter 3
