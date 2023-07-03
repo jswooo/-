@@ -62,7 +62,7 @@ MLM의 효과는 BERT 논문에서 실행한 Ablation study를 통해서 알아�
 <br>
 <img width="380" alt="image" src="https://user-images.githubusercontent.com/102455634/233074035-aafff2af-ca78-4a61-ba2b-335ec141238e.png">
 <br>
-앞서 언급한 마스킹 비율 또한 마스킹 비율에 대한 ablation study를 통해 확인 가능하다. 80%, 20%, 20%로 진행시 정확도가 가장 높은 것을 볼 수 있다. 
+앞서 언급한 마스킹 비율 또한 마스킹 비율에 대한 ablation study를 통해 확인 가능하다. 80%, 10%, 10%로 진행시 정확도가 가장 높은 것을 볼 수 있다. 
 <br>
 <br>
 
